@@ -1,6 +1,6 @@
 /* eslint react/no-array-index-key: 0 */
 import React from "react";
-import { Checkbox, Table } from "semantic-ui-react";
+import { Checkbox, Table, Icon } from "semantic-ui-react";
 import PropTypes from "prop-types";
 
 class CustomerTable extends React.Component {
@@ -15,7 +15,13 @@ class CustomerTable extends React.Component {
         <Table.Cell>{customer.lastName}</Table.Cell>
         <Table.Cell>{customer.firstName}</Table.Cell>
         <Table.Cell>{customer.dob}</Table.Cell>
-        <Table.Cell>{customer.verified}</Table.Cell>
+        <Table.Cell>
+          {customer.verified === "true" ? (
+            <Icon color="green" name="thumbs up outline" size="large" />
+          ) : (
+            <Icon color="red" name="thumbs down outline" size="large" />
+          )}
+        </Table.Cell>
         <Table.Cell>{customer.lastVerifiedOn}</Table.Cell>
       </Table.Row>
     ));

@@ -2,6 +2,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Input, Menu, Button, Grid } from "semantic-ui-react";
+import api from "../../api";
 import MenuBar from "../menu/MenuBar";
 import VerityRadioForm from "../forms/VerifyRadioForm";
 import CustomerTable from "../tables/CustomerTable";
@@ -11,7 +12,12 @@ const mockCustomers = require("../../mockData/mockCustomers");
 console.log(mockCustomers);
 
 class DashboardPage extends React.Component {
-  state = {};
+  constructor() {
+    super();
+    this.state = {};
+
+    this.verifyAllCustomers = this.verifyAllCustomers.bind(this);
+  }
 
   fetctCustomers(customerId) {
     this.setState({
@@ -21,6 +27,16 @@ class DashboardPage extends React.Component {
 
   componentWillMount() {
     this.fetctCustomers(this.props.user.customerId);
+  }
+
+  verifyAllCustomers() {
+    console.log(this.state.customerData);
+    api.customer.verify(this.state.customerData).then(verifiedData => {
+      this.setState({
+        customerData: verifiedData
+      });
+    });
+    console.log(this.state.customerData);
   }
 
   render() {
@@ -35,7 +51,11 @@ class DashboardPage extends React.Component {
           <Button style={{ marginLeft: 20 }} color="teal">
             Verify Selected Customers
           </Button>
-          <Button style={{ marginLeft: 10 }} color="teal">
+          <Button
+            style={{ marginLeft: 10 }}
+            color="teal"
+            onClick={this.verifyAllCustomers}
+          >
             Verify All Customers
           </Button>
         </div>
