@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Form, Button } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { Form, Button, Message } from "semantic-ui-react";
 import Validator from "validator";
 import InlineError from "../messages/InlineError";
 
@@ -37,39 +38,56 @@ class LoginForm extends React.Component {
   render() {
     const { data, errors } = this.state;
     return (
-      <Form onSubmit={this.onSubmit}>
-        <Form.Field error={!!errors.email}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="example@example.com"
-            value={data.email}
-            onChange={this.onChangeText}
-          />
-          {errors.email && <InlineError text={errors.email} />}
-        </Form.Field>
-        <Form.Field error={!!errors.password}>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Make it secure"
-            value={data.password}
-            onChange={this.onChangeText}
-          />
-          {errors.password && <InlineError text={errors.password} />}
-        </Form.Field>
-        <Button primary>Login</Button>
-      </Form>
+      <div>
+        {this.props.authError && (
+          <Message error header={this.props.authError} />
+        )}
+        <Form onSubmit={this.onSubmit}>
+          <Form.Field error={!!errors.email}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@example.com"
+              value={data.email}
+              onChange={this.onChangeText}
+            />
+            {errors.email && <InlineError text={errors.email} />}
+          </Form.Field>
+          <Form.Field error={!!errors.password}>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Make it secure"
+              value={data.password}
+              onChange={this.onChangeText}
+            />
+            {errors.password && <InlineError text={errors.password} />}
+          </Form.Field>
+          <Button primary>Login</Button>
+        </Form>
+      </div>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  authError: state.auth.authError
+});
+
 LoginForm.propTypes = {
-  submit: PropTypes.func.isRequired
+  submit: PropTypes.func.isRequired,
+  authError: PropTypes.string
 };
 
-export default LoginForm;
+LoginForm.defaultProps = {
+  authError: ""
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(LoginForm);

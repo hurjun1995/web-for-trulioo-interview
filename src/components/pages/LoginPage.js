@@ -16,7 +16,6 @@ class LoginPage extends React.Component {
       if (this.props.isLoggedIn) {
         this.props.history.push("/dashboard");
       }
-      console.log(this.props.authError);
     });
   };
   render() {
@@ -42,12 +41,7 @@ LoginPage.propTypes = {
     push: PropTypes.func.isRequired
   }).isRequired,
   login: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired,
-  authError: PropTypes.string
-};
-
-LoginPage.defaultProps = {
-  authError: ""
+  isLoggedIn: PropTypes.bool.isRequired
 };
 
 export default connect(

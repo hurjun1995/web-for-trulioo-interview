@@ -15,7 +15,7 @@ export default {
       }
       return Promise.reject({
         exists: false,
-        error: { message: "user does not exist" }
+        error: { message: "User does not exist. Please try again." }
       });
     }
   }
