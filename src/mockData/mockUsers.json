@@ -3,12 +3,12 @@
     "email": "example1@example.com",
     "password": "asdfzxcv",
     "name": "Joon Hur",
-    "customersId": "1"
+    "customerId": "1"
   },
   "example2@example.com": {
     "email": "example2@example.com",
     "password": "qwerasdf",
     "name": "Alice Lee",
-    "customersId": "2"
+    "customerId": "2"
   }
 }
