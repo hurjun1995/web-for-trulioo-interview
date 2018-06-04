@@ -1,0 +1,10 @@
+.LoginPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+
+.LoginFormContainer {
+  width: 300px;
+}

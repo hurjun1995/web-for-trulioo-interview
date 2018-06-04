@@ -13,11 +13,25 @@ function formatDate(date) {
   return [year, month, day].join("-");
 }
 
-function externalVerficationAPI(customers) {
-  customers.map(customer => {
-    customer.verified = Math.floor(Math.random() * 2) === 0 ? "true" : "false";
-    customer.lastVerifiedOn = formatDate(Date.now());
+function externalVerficationAPI(customers, checkedCustomersId) {
+  let keys = Object.keys(customers);
+  if (checkedCustomersId.length === 0) {
+    checkedCustomersId = keys;
+  }
+  console.log(checkedCustomersId);
+  keys.forEach(key => {
+    if (
+      customers.hasOwnProperty(key) &&
+      checkedCustomersId.indexOf(key) !== -1
+    ) {
+      let c = customers[key];
+      console.log(c);
+      c.verified = Math.floor(Math.random() * 2) === 0 ? "true" : "false";
+      c.lastVerifiedOn = formatDate(Date.now());
+    }
   });
+  console.log(customers);
+
   return Promise.resolve(customers);
 }
 
@@ -40,6 +54,8 @@ export default {
     }
   },
   customer: {
-    verify: customers => externalVerficationAPI(customers)
+    verify: (customers, checkedCustomersId) => {
+      return externalVerficationAPI(customers, checkedCustomersId);
+    }
   }
 };

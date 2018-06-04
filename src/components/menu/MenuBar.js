@@ -7,13 +7,16 @@ const MenuBar = props => (
     <Menu.Item header name="WhoAreYou" />
     <Menu.Menu position="right">
       <Menu.Item name={props.userGreeting} />
-      <Menu.Item name="logout" />
+      <Menu.Item name="logout" onClick={() => props.history.push("/")} />
     </Menu.Menu>
   </Menu>
 );
 
 MenuBar.propTypes = {
-  userGreeting: PropTypes.string.isRequired
+  userGreeting: PropTypes.string.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired
 };
 
 MenuBar.defaultProps = {

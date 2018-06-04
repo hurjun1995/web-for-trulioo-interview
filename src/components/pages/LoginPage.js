@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import LoginForm from "../forms/LoginForm";
+import CustomHeader from "../messages/CustomHeader";
 import { login } from "../../actions/auth";
+import "../css/LoginPage.css";
 
 class LoginPage extends React.Component {
   constructor() {
@@ -19,9 +21,15 @@ class LoginPage extends React.Component {
   };
   render() {
     return (
-      <div>
-        <h1>Login Page</h1>
-        <LoginForm submit={this.submit} />
+      <div className="LoginPageContainer">
+        <div className="LoginFormContainer">
+          <CustomHeader
+            iconName="question"
+            headerText="Who Are You"
+            subHeaderText="For Trulioo Interview"
+          />
+          <LoginForm submit={this.submit} />
+        </div>
       </div>
     );
   }

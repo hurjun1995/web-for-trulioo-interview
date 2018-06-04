@@ -1,76 +1,76 @@
 {
-  "1": [
-    {
+  "1": {
+    "c1": {
       "firstName": "Chloe",
       "lastName": "Chung",
       "dob": "1992-01-25",
       "verified": "true",
       "lastVerifiedOn": "2017-11-02"
     },
-    {
+    "c2": {
       "firstName": "Alan",
       "lastName": "Kim",
       "dob": "1999-10-25",
       "verified": "false",
       "lastVerifiedOn": "2017-11-02"
     },
-    {
+    "c3": {
       "firstName": "Ahri",
       "lastName": "Makah",
       "dob": "1993-12-25",
       "verified": "false",
       "lastVerifiedOn": "2014-12-02"
     },
-    {
+    "c4": {
       "firstName": "Vladimir",
       "lastName": "Bloody",
       "dob": "1991-05-25",
       "verified": "false",
       "lastVerifiedOn": "2016-01-02"
     },
-    {
+    "c5": {
       "firstName": "Cupcake",
       "lastName": "Sweet",
       "dob": "1999-10-25",
       "verified": "false",
       "lastVerifiedOn": "2018-06-02"
     }
-  ],
-  "2": [
-    {
+  },
+  "2": {
+    "c1": {
       "firstName": "Lisandra",
       "lastName": "Mango",
       "dob": "1992-01-25",
       "verified": "true",
       "lastVerifiedOn": "2018-06-02"
     },
-    {
+    "c2": {
       "firstName": "Strawberry",
       "lastName": "Juice",
       "dob": "1999-10-25",
       "verified": "false",
       "lastVerifiedOn": "2017-11-02"
     },
-    {
+    "c3": {
       "firstName": "Goodold",
       "lastName": "Days",
       "dob": "1993-12-25",
       "verified": "false",
       "lastVerifiedOn": "2017-02-02"
     },
-    {
+    "c4": {
       "firstName": "Hello",
       "lastName": "Myfriends",
       "dob": "1991-05-25",
       "verified": "false",
       "lastVerifiedOn": "2013-07-02"
     },
-    {
+    "c5": {
       "firstName": "Cob",
       "lastName": "Bread",
       "dob": "1999-10-25",
       "verified": "false",
       "lastVerifiedOn": "2017-08-02"
     }
-  ]
+  }
 }
