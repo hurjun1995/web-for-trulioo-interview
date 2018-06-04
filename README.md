@@ -9,6 +9,7 @@ This project is a website for trulioo's written interview.
   - Verified
   - Last date of Verification
 - Users can perform verification on ALL/SELECTED customers on Dashboard page
+  - Each customer can be marked as SELECTED by clicking on toggle which is on the left of each customer's name
   - Verification is done randomly; it will be true/false with 50% chance for each.
 
 ## How To Open the Web:
