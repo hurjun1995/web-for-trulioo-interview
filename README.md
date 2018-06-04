@@ -9,6 +9,7 @@ This project is a website for trulioo's written interview.
   - Verified
   - Last date of Verification
 - Users can perform verification on ALL/SELECTED customers on Dashboard page
+  - Verification is done randomly; it will be true/false with 50% chance for each.
 
 ## How To Open the Web:
 
